@@ -10,7 +10,7 @@ import imageio
 from network import Net
 import glob
 from skimage.metrics import peak_signal_noise_ratio as PSNR
-# Use MATLAB for PSNR and SSIM, using python for quick demo only.
+# Use MATLAB for PSNR, using python for quick demo only.
 
 from torch.utils.data import Dataset
 
