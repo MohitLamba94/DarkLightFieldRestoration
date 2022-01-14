@@ -83,13 +83,12 @@ def run_test(model, dataloader_test, save_images):
     print('Average PSNR = ',psnr/(image_num+1),' dB')
     return
 
-# os.chdir('/home/mohit/Music/l3fnetlight/exp12/fast_11/batchsize4/live')
 path = os.getcwd()
 print(path)
 dataloader_test = DataLoader(load_data(), batch_size=1, shuffle=False, num_workers=0, pin_memory=False)
 device = torch.device("cpu")
 model = Net()
-checkpoint = torch.load('weights',map_location=device)#('/home/mohit/Music/l3fnetlight/exp12/fast_11/batchsize4/weights/weights_{}'.format(50000),map_location=device)
+checkpoint = torch.load('weights',map_location=device)
 model.load_state_dict(checkpoint['model'])
 model = model.to(device)
 print('Device on cuda: {}'.format(next(model.parameters()).is_cuda))
